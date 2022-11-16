@@ -1,42 +1,21 @@
+import 'package:calculator/main_page.dart';
 import 'package:flutter/material.dart';
+import './general.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('Calculator')),
-        body: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.all(40.0),
-              child: Center(
-                  child: ElevatedButton(
-                child: Text('General Calculator'),
-                onPressed: () {},
-              )),
-            ),
-            Container(
-              child: Center(
-                  child: ElevatedButton(
-                child: Text('Scientific Calculator'),
-                onPressed: () {},
-              )),
-            )
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Calculator',
+      theme: ThemeData(primarySwatch: Colors.teal),
+      home: MainPage(),
     );
   }
 }
